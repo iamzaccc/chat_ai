@@ -53,15 +53,29 @@ class _ChatScreenState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 2,
-        title: const Text("ChatGPT"),
-        actions: [
-          IconButton(
-            onPressed: signUserOut,
+        leading: Builder(
+          builder: (context) => IconButton(
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
             icon: const Icon(
-              Icons.logout,
+              Icons.menu,
               color: Colors.white,
             ),
-          )
+          ),
+        ),
+        title: const Text(
+          "Chat Bot",
+          style: TextStyle(color: Colors.white),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+          ),
         ],
       ),
       body: SafeArea(
@@ -129,7 +143,7 @@ class _ChatScreenState extends State<HomePage> {
           ],
         ),
       ),
-      //drawer
+      //drawer profile and logout
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -144,7 +158,21 @@ class _ChatScreenState extends State<HomePage> {
                 "" + user.email!,
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
-            )
+            ),
+            const ListTile(
+              title: Text('New chat'),
+              leading: Icon(Icons.note_add),
+            ),
+            const ListTile(
+              title: Text('Share Friends'),
+              leading: Icon(Icons.share),
+            ),
+            const ListTile(
+              title: Text('Saved'),
+              leading: Icon(Icons.bookmark),
+            ),
+            const Divider(),
+            ElevatedButton(onPressed: signUserOut, child: const Text('LOGOUT'))
           ],
         ),
       ),
@@ -215,39 +243,3 @@ class _ChatScreenState extends State<HomePage> {
     }
   }
 }
-
-
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter/material.dart';
-
-// class HomePage extends StatelessWidget {
-//   HomePage({super.key});
-
-//   final user = FirebaseAuth.instance.currentUser!;
-
-//   // sign user out method
-//   void signUserOut() {
-//     FirebaseAuth.instance.signOut();
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.grey[300],
-//       appBar: AppBar(
-//         backgroundColor: Colors.grey[900],
-//         actions: [
-//           IconButton(
-//             onPressed: signUserOut,
-//             icon: Icon(Icons.logout),
-//           )
-//         ],
-//       ),
-//       body: Center(
-//           child: Text(
-//         "LOGGED IN AS: " + user.email!,
-//         style: TextStyle(fontSize: 20),
-//       )),
-//     );
-//   }
-// }
