@@ -44,17 +44,17 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  // wrong email message popup
+  // wrong email message incorect password
   void showErrorMessege(String message) {
     showDialog(
       context: context,
       builder: (context) {
-        return AlertDialog(
+        return const AlertDialog(
           backgroundColor: Colors.deepPurple,
           title: Center(
             child: Text(
-              message,
-              style: TextStyle(color: Colors.white),
+              ('incorrect in your password'),
+              style: TextStyle(color: Colors.white, fontSize: 16),
             ),
           ),
         );
