@@ -9,7 +9,6 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/models_provider.dart';
-import '../services/assets_manager.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
