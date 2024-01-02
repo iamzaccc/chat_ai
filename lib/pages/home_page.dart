@@ -54,10 +54,6 @@ class _ChatScreenState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 2,
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset(AssetsManager.openaiLogo),
-        ),
         title: const Text("ChatGPT"),
         actions: [
           IconButton(
@@ -131,6 +127,25 @@ class _ChatScreenState extends State<HomePage> {
                 ),
               ),
             ),
+          ],
+        ),
+      ),
+      //drawer
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: scaffoldBackgroundColor),
+              accountName: const Text(
+                "CHATBOOT: ",
+                style: TextStyle(fontSize: 21, color: Colors.white),
+              ),
+              accountEmail: Text(
+                "" + user.email!,
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+            )
           ],
         ),
       ),
