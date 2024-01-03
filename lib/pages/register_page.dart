@@ -111,9 +111,9 @@ class _LoginPageState extends State<register> {
 
                 const SizedBox(height: 50),
 
-                // welcome back, you've been missed!
+                //create  missed!
                 Text(
-                  'User Create account in chat boot app!',
+                  'Let\'s create an account for you!',
                   style: TextStyle(
                     color: Colors.grey[700],
                     fontSize: 16,
@@ -197,20 +197,21 @@ class _LoginPageState extends State<register> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Not a member?',
+                      'already have a account?',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                     const SizedBox(width: 4),
                     TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => AuthPage(),
-                            ),
-                          );
-                        },
-                        child: const Text('already have a account'))
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AuthPage(),
+                          ),
+                        );
+                      },
+                      child: const Text('Login'),
+                    ),
                   ],
                 )
               ],
