@@ -1,5 +1,6 @@
 import 'package:chat_ai/components/my_button.dart';
 import 'package:chat_ai/components/my_textfield.dart';
+import 'package:chat_ai/constants/constants.dart';
 import 'package:chat_ai/pages/auth_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +93,7 @@ class _LoginPageState extends State<register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: scaffoldBackgroundColor,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -104,7 +105,7 @@ class _LoginPageState extends State<register> {
                 const Text(
                   'Create Account',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 28,
                       fontWeight: FontWeight.bold),
                 ),
@@ -115,7 +116,7 @@ class _LoginPageState extends State<register> {
                 Text(
                   'Let\'s create an account for you!',
                   style: TextStyle(
-                    color: Colors.grey[700],
+                    color: Colors.grey[500],
                     fontSize: 16,
                   ),
                 ),

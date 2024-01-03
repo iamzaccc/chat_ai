@@ -1,5 +1,6 @@
 import 'package:chat_ai/components/my_button.dart';
 import 'package:chat_ai/components/my_textfield.dart';
+import 'package:chat_ai/constants/constants.dart';
 import 'package:chat_ai/pages/register_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: scaffoldBackgroundColor,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -95,12 +96,13 @@ class _LoginPageState extends State<LoginPage> {
                 // logo
                 const Icon(
                   Icons.lock,
-                  size: 100,
+                  size: 70,
+                  color: Colors.white,
                 ),
                 const Text(
                   'Login Account',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 28,
                       fontWeight: FontWeight.bold),
                 ),
@@ -111,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   'Welcome back you\'ve been missed!',
                   style: TextStyle(
-                    color: Colors.grey[700],
+                    color: Colors.grey[600],
                     fontSize: 16,
                   ),
                 ),
