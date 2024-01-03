@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
           backgroundColor: Colors.deepPurple,
           title: Center(
             child: Text(
-              ('incorrect in your password'),
+              ('Incorrect in Email'),
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
           ),
@@ -62,23 +62,23 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  // // wrong password message popup
-  // void wrongPasswordMessage() {
-  //   showDialog(
-  //     context: context,
-  //     builder: (context) {
-  //       return const AlertDialog(
-  //         backgroundColor: Colors.deepPurple,
-  //         title: Center(
-  //           child: Text(
-  //             'Incorrect Password',
-  //             style: TextStyle(color: Colors.white),
-  //           ),
-  //         ),
-  //       );
-  //     },
-  //   );
-  // }
+  // wrong password message popup
+  void wrongPasswordMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          backgroundColor: Colors.deepPurple,
+          title: Center(
+            child: Text(
+              'Incorrect Password',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
